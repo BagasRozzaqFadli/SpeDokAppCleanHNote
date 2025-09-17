@@ -12,7 +12,7 @@
 
 ## 1. Pengenalan
 
-CleanHNote adalah aplikasi mobile untuk mengelola tugas bersih-bersih. Dokumen ini menjelaskan apa yang harus bisa dilakukan aplikasi.
+CleanHNote adalah aplikasi berbasis Flutter yang dirancang untuk mempermudah pengguna dalam mengelola penjadwalan seperti pembagian tugas bersih-bersih. Aplikasi ini menggunakan Appwrite sebagai backend untuk autentikasi pengguna dan penyimpanan data. CleanHNote memungkinkan pengguna untuk membuat jadwal tugas bersih-bersih, menunjuk orang yang bertanggung jawab, dan menerima pengingat terkait tugas yang akan datang. Konsep aplikasi ini menggunakan pendekatan multi-tenant untuk memisahkan data antar pengguna atau kelompok yang terdaftar dalam satu project Appwrite.
 
 ## 2. MVP (Minimum Viable Product)
 

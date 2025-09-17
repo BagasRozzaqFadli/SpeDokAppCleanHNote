@@ -1,4 +1,4 @@
-# Timeline Sprint - Sederhana
+# Timeline Sprint
 ## CleanHNote - Rencana Pengembangan 8 Minggu
 
 ---
@@ -45,33 +45,34 @@
 - [ ] Buat database untuk tugas
 - [ ] Testing fitur tugas
 
-## 4. Sprint 3: Notifications & Search (Minggu 5-6)
-
-### Tujuan
-- Implementasi notifikasi
-- Buat fitur pencarian dan filter
-- Implementasi deadline
-
-### Checklist (5 Item)
-- [ ] Setup local notifications
-- [ ] Buat fitur pencarian tugas
-- [ ] Buat filter berdasarkan status/prioritas
-- [ ] Implementasi deadline dan reminder
-- [ ] Testing notifikasi dan pencarian
-
-## 5. Sprint 4: Premium Features & Launch (Minggu 7-8)
+## 4. Sprint 3: Premium Features & Notification (Minggu 5-6)
 
 ### Tujuan
 - Implementasi fitur tim
 - Buat fitur upload foto
+- Implementasi notifikasi
+
+### Checklist (5 Item)
+- [ ] Buat fitur tim
+- [ ] Buat fitur invite anggota
+- [ ] Implementasi upload foto
+- [ ] Buat sistem subscription
+- [ ] Setup local notifications
+
+
+## 5. Sprint 4: UI / UX & Finalisasi (Minggu 7-8)
+
+### Tujuan
+- UI / UX
+- Testing App
 - Siapkan untuk launch
 
 ### Checklist (5 Item)
-- [ ] Buat fitur tim dan invite anggota
-- [ ] Implementasi upload foto
-- [ ] Buat sistem subscription
+- [ ] Penerapan UI / UX
+- [ ] Pengoptimalan aplikasi
+- [ ] Bug fixes
+- [ ] Final testing
 - [ ] Siapkan untuk Play Store
-- [ ] Final testing dan bug fixes
 
 ## 6. Pembagian Tugas
 

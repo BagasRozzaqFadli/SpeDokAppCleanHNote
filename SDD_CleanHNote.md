@@ -179,5 +179,3 @@ class TaskProvider extends ChangeNotifier {
 - Retry mechanism untuk network errors
 
 ---
-
-*SDD sederhana ini menjelaskan desain CleanHNote dengan mudah dipahami.*

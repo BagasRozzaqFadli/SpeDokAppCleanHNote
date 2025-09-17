@@ -159,8 +159,7 @@ class TaskProvider extends ChangeNotifier {
 
 ### 8.1 Data Protection
 - Password dienkripsi oleh Appwrite
-- Token JWT untuk autentikasi
-- HTTPS untuk semua komunikasi
+- Token untuk autentikasi tim
 
 ### 8.2 Access Control
 - User hanya bisa akses data miliknya

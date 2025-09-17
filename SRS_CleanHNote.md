@@ -71,14 +71,14 @@ MVP CleanHNote adalah versi paling dasar yang harus bisa berfungsi untuk memenuh
 
 ### 4.4 Kompatibilitas
 - Berjalan di Android 5.0 ke atas
-- Berjalan di iOS 12.0 ke atas
+- Berjalan di iOS 12.0 ke atas (Opsional)
 - Butuh koneksi internet
 
 ## 5. Batasan Aplikasi
 
 - Maksimal 50 anggota per tim (Premium)
-- Maksimal 10MB per foto
-- Maksimal 1000 tugas per user (Free)
+- Maksimal 10MB per foto (Premium)
+- Maksimal 50 tugas per user (Free)
 - Tidak ada batas tugas untuk Premium
 
 ## 6. Skenario Penggunaan

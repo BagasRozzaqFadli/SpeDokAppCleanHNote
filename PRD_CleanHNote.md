@@ -35,7 +35,7 @@ CleanHNote adalah aplikasi mobile untuk mengelola tugas bersih-bersih. Aplikasi 
 
 ## 4. Teknologi yang Digunakan
 
-- **Aplikasi**: Flutter (Android & iOS)
+- **Aplikasi**: Flutter (Android)
 - **Backend**: Appwrite (untuk data dan login)
 - **Database**: Appwrite Database
 
@@ -47,7 +47,7 @@ CleanHNote adalah aplikasi mobile untuk mengelola tugas bersih-bersih. Aplikasi 
 ## 6. Tujuan Sukses
 
 - 100+ download dalam 1 bulan
-- Rating 4.0+ di Play Store
+- Rating 3.0+ di Play Store
 - 15% pengguna upgrade ke Premium
 
 ---

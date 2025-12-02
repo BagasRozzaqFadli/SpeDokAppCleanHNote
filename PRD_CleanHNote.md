@@ -36,8 +36,8 @@ CleanHNote adalah aplikasi berbasis Flutter yang dirancang untuk mempermudah pen
 ## 4. Teknologi yang Digunakan
 
 - **Aplikasi**: Flutter (Android)
-- **Backend**: Appwrite (untuk data dan login)
-- **Database**: Appwrite Database
+- **Backend**: Firebase (untuk data dan login)
+- **Database**: Firestore Database
 
 ## 5. Model Bisnis
 

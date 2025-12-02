@@ -1,5 +1,6 @@
 # Entity Relationship Diagram (ERD)
-## CleanHNote - Database Design
+## CleanHNote - Database Design 
+- **Note**: Tabel dibawah ini mungkin masih kurang sesuai dan mungkin masih disesuaikan lebih lanjut
 
 ---
 
@@ -21,9 +22,10 @@ CleanHNote menggunakan Appwrite Database dengan 4 tabel utama:
 |-------|------|------------|
 | id | String | ID unik pengguna |
 | email | String | Email pengguna |
-| name | String | Nama lengkap |
-| subscription | String | free atau premium |
+| name | String | Nama pengguna |
+| Role | String | free, premium, admin |
 | created_at | Date | Tanggal daftar |
+| premiumExpDate | Date | Tanggal Habis Langganan bila memiliki role premium |
 
 ### 2.2 Tabel Tasks (Tugas)
 | Field | Type | Keterangan |
@@ -31,9 +33,7 @@ CleanHNote menggunakan Appwrite Database dengan 4 tabel utama:
 | id | String | ID unik tugas |
 | title | String | Judul tugas |
 | description | String | Deskripsi tugas |
-| user_id | String | ID pembuat tugas |
-| assigned_to | String | ID yang ditugaskan |
-| team_id | String | ID tim (jika ada) |
+| user_id | String | ID pembuat tugas dari tabel users |
 | status | String | pending, completed, cancelled |
 | priority | String | low, medium, high, urgent |
 | due_date | Date | Tanggal deadline |
@@ -44,10 +44,36 @@ CleanHNote menggunakan Appwrite Database dengan 4 tabel utama:
 |-------|------|------------|
 | id | String | ID unik tim |
 | name | String | Nama tim |
-| owner_id | String | ID pemilik tim |
+| owner_id | String | ID pemilik tim diambil dari user ID yang membuat tim |
+| invitation_code | String | kode unik untuk gabung tim |
+| description | String | Deskripsi tim |
 | created_at | Date | Tanggal dibuat |
 
-### 2.4 Tabel Photos (Foto)
+### 2.4 Tabel Team_Memmbers (Tim)
+| Field | Type | Keterangan |
+|-------|------|------------|
+| id | String | ID unik tim |
+| user_id | String | ID anggota |
+| teams_id | String | ID tim |
+| role | String | Owner, memmber |
+| joined_at | Date | Tanggal masuk team |
+| created_at | Date | Tanggal dibuat |
+
+### 2.5 Tabel Tasks_Team (Tugas Tim)
+| Field | Type | Keterangan |
+|-------|------|------------|
+| id | String | ID unik tugas |
+| title | String | Judul tugas |
+| description | String | Deskripsi tugas |
+| user_id | String | ID pembuat tugas |
+| assigned_to | String | ID yang ditugaskan |
+| teams_id | String | ID tim (jika ada) |
+| status | String | pending, completed, cancelled |
+| priority | String | low, medium, high, urgent |
+| due_date | Date | Tanggal deadline |
+| created_at | Date | Tanggal dibuat |
+
+### 2.6 Tabel Photos (Foto) ==> tolong baharui
 | Field | Type | Keterangan |
 |-------|------|------------|
 | id | String | ID unik foto |
@@ -55,6 +81,12 @@ CleanHNote menggunakan Appwrite Database dengan 4 tabel utama:
 | photo_type | String | before atau after |
 | file_url | String | URL file foto |
 | uploaded_at | Date | Tanggal upload |
+
+### 2.7 Tabel Teams_Chat (Chatting dengan teman satu tim)
+
+### 2.8 Tabel Notification (notifikasi)
+
+### 2.9 Tabel Payment (Memastikan pembayaran)
 
 ## 3. Hubungan Antar Tabel
 
@@ -75,25 +107,7 @@ Tasks (1) ──── (∞) Photos (foto dokumentasi)
 - **1 Team** bisa punya **banyak Tasks**
 - **1 Task** bisa punya **banyak Photos**
 
-## 5. Contoh Data
 
-### Users
-```
-id: "user1"
-email: "bagas@email.com"
-name: "Bagas Rozzaq"
-subscription: "free"
-```
-
-### Tasks
-```
-id: "task1"
-title: "Bersihkan kamar"
-description: "Sapu dan pel lantai"
-user_id: "user1"
-status: "pending"
-priority: "medium"
-```
 
 ---
 

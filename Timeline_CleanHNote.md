@@ -17,81 +17,94 @@
 - **Durasi Sprint**: 2 minggu per sprint
 - **Tim**: 2 developer
 
-## 2. Sprint 1: Setup & Login (Minggu 1-2)
+## 2. Sprint 1: Foundation & Authentication (Minggu 1-2)
+Fokus: Menyiapkan infrastruktur Firebase dan manajemen user.
 
 ### Tujuan
-- Setup project Flutter
-- Buat halaman login dan daftar
-- Setup Appwrite backend
+- Koneksi project Flutter ke Firebase & Appwrite.
+- Sistem Login/Register dengan pemisahan Role (free vs premium).
+- Implementasi Mock Payment (Simulasi Upgrade).
 
-### Checklist (5 Item)
-- [ ] Buat project Flutter dan setup Appwrite
-- [ ] Buat halaman login dan daftar
-- [ ] Setup database di Appwrite
-- [ ] Buat design system dasar
-- [ ] Testing login dan daftar
+### Checklist
+- [✓] Setup: Inisialisasi Firebase Project (Auth, Firestore) & Appwrite Project.
+- [✓] Auth: Implementasi Login Google & Email/Password.
+- [✓] Database: Membuat struktur koleksi awal (users) di Firestore.
+- [✓] Logic: Membuat fungsi upgrade premium (update field role & premiumExpiresAt).
+- [✓] UI: Halaman Login, Register, dan Profil User.
 
-## 3. Sprint 2: Task Management (Minggu 3-4)
-
-### Tujuan
-- Buat fitur CRUD tugas
-- Buat halaman daftar tugas
-- Implementasi kategori dan prioritas
-
-### Checklist (5 Item)
-- [ ] Buat halaman daftar tugas
-- [ ] Buat halaman tambah/edit tugas
-- [ ] Implementasi kategori dan prioritas
-- [ ] Buat database untuk tugas
-- [ ] Testing fitur tugas
-
-## 4. Sprint 3: Premium Features & Notification (Minggu 5-6)
+## 3. Sprint 2: Personal Features & Core Logic (Minggu 3-4)
+Fokus: Fitur dasar untuk pengguna gratis (Personal Task).
 
 ### Tujuan
-- Implementasi fitur tim
-- Buat fitur upload foto
-- Implementasi notifikasi
+- CRUD Tugas Pribadi (Create, Read, Update, Delete).
+- State Management (Provider) terhubung ke Firestore Stream.
+- Implementasi Notifikasi Lokal.
 
-### Checklist (5 Item)
-- [ ] Buat fitur tim
-- [ ] Buat fitur invite anggota
-- [ ] Implementasi upload foto
-- [ ] Buat sistem subscription
-- [ ] Setup local notifications
+### Checklist
+- [✓] Database: Setup koleksi personal_tasks dan indexing query.
+- [✓] Logic: Membuat TaskProvider dengan snapshots() listener.
+- [✓] UI: Halaman Home Personal dan Add Task Form.
+- [✓] Feature: Implementasi Local Notification untuk pengingat jadwal.
+- [✓] Testing: Cek fitur offline persistence (Buka aplikasi tanpa internet).
 
-
-## 5. Sprint 4: UI / UX & Finalisasi (Minggu 7-8)
+## 4. Sprint 3: Team Collaboration & Image Engine (Minggu 5-6)
+Fokus: Fitur Premium, Logika Tim, dan Sistem Gambar Base64.
 
 ### Tujuan
-- UI / UX
-- Testing App
-- Siapkan untuk launch
+- Manajemen Tim (Create, Join via Code, Member Logic).
+- Security Rules: Menerapkan aturan validasi member di Firestore.
+- Image Processing: Kompresi kamera ke Base64.
+- Integrasi Appwrite untuk data analitik.
 
-### Checklist (5 Item)
-- [ ] Penerapan UI / UX
-- [ ] Pengoptimalan aplikasi
-- [ ] Bug fixes
-- [ ] Final testing
-- [ ] Siapkan untuk Play Store
+### Checklist
+- [✓] Security: Deploy firestore.rules (Validasi memberIds & joinedTeamIds).
+- [✓] Logic: Fitur Join Team (Update array user & team secara atomic/batch).
+- [✓] Engine: Implementasi FlutterImageCompress -> Convert to Base64 String.
+- [✓] Database: Setup koleksi team_assignments (dengan field foto embedded).
+- [✓] Integration: Setup Trigger/Function: Saat tugas selesai -> Kirim data ke Appwrite (team_analytics).
 
-## 6. Pembagian Tugas
+## 5. Sprint 4: Analytics, Polishing & Finalization (Minggu 7-8)
+Fokus: Visualisasi Data Appwrite, UI/UX, dan Laporan.
 
-### Bagas Rozzaq Fadli
-- Frontend development (Flutter)
-- UI/UX design
-- Screen implementation
+### Tujuan
+- Menampilkan data dari Appwrite ke UI.
+- Testing performa (Load time gambar Base64).
+- Bug fixing dan penyusunan laporan.
 
-### Muhammad Alif Nur Hanif
-- Backend integration (Appwrite)
-- Database design
-- API implementation
+### Checklist
+- [✓] UI: Halaman Team Analytics (Grafik/Statistik dari Appwrite).
+- [✓] UI/UX: Polish tampilan (Badge Premium, Loading State saat upload gambar).
+- [✓] Testing: Stress test upload foto (memastikan size < 500KB).
+- [✓] Docs: Finalisasi ERD, SDD, PRD, dan Manual Book.
+- [ ] Release: Build APK Release version.
 
-## 7. Tools yang Digunakan
+## 6. Pembagian Tugas Teknis
 
-- **Development**: Flutter, Android Studio
-- **Backend**: Appwrite Cloud
-- **Design**: Figma
-- **Version Control**: Git, GitHub
-- **Testing**: Flutter Test
+### Bagas Rozzaq Fadli (Frontend & UI/UX Specialist)
+Tanggung Jawab:
+- Desain antarmuka (Slicing UI) untuk seluruh halaman.
+- Implementasi Widget Kamera & Preview Gambar (Base64 Decoder).
+- Visualisasi Grafik Analitik (menggunakan library charts).
+- State Management UI Binding (Menghubungkan Provider ke View).
 
+### Muhammad Alif Nur Hanif (Backend & Logic Architect)
+Tanggung Jawab:
+- Konfigurasi Firebase Console & Appwrite Console.
+- Penulisan Firestore Security Rules (Logic keamanan).
+- Implementasi Service Logic: AuthService, FirestoreService, ImageService.
+- Sinkronisasi data antara Firebase dan Appwrite.
+
+## 7. Tech Stack & Tools (Updated)
+
+- **Framework**: Flutter SDK (Dart).
+- **Primary Backend**: Firebase (Auth, Firestore).
+- **Secondary Backend**: Appwrite (Database for Analytics).
+
+- Key Libraries:
+  - cloud_firestore (Database).
+  - flutter_image_compress (Image Engine).
+  - provider (State Management).
+  - flutter_local_notifications.
+- **Design**: Figma.
+- **Version Control**: Git & GitHub.
 ---
